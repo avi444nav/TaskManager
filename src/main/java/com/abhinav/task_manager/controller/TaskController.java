@@ -48,4 +48,11 @@ public class TaskController {
     public void deleteTask(@PathVariable Long id) {
         taskService.deleteTask(id);
     }
-}
+    @GetMapping("/user/{userId}")
+    public List<Task> getTasksByUserId(@PathVariable Long userId) {
+        return taskService.getTasksByUserId(userId);}
+    @GetMapping ("/completed/{completed}")
+    public List<Task> getTasksByCompletionStatus(@PathVariable boolean completed) {
+        return taskService.getTasksByCompletionStatus(completed);
+}}
+    

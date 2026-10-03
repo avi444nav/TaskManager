@@ -37,6 +37,12 @@ public class TaskService {
         existingTask.setCompleted(updatedTask.isCompleted());
         return taskRepository.save(existingTask);
     }
+    public List<Task> getTasksByUserId(Long userId) {
+        return taskRepository.findByUserId(userId);
+    }
+    public List<Task> getTasksByCompletionStatus(boolean completed) {
+        return taskRepository.findByCompleted(completed);
+    }
 
     public void deleteTask(Long id) {
         taskRepository.deleteById(id);
